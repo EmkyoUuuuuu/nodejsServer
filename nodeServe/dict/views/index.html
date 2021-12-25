@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上传文件</title>
+    <title>首页</title>
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <!-- 使用form表单上传文件 -->
-    <!-- 此方法有一个缺点，提交完毕后，会跳转后对应的页面 -->
-    <form action="http://localhost/files/avatar" enctype="multipart/form-data" method="post">
-        <input multiple type="file" name="avatar">
-        <input type="file" name="pic">
-        <input multiple type="file" name="bgc">
-        <input type="text" name="text1">
-        <input type="text" name="text2">
-        <button>点击上传</button>
-    </form>
+    <div>首页</div>
+    <div class="offBox">
+        请登录
+        <a href="../views/login.html"></a>
+    </div>
+
+    <div class="onBox active">
+        您好<span class="nickname">xxx</span>
+    <a href="../views/self.html">个人中心</a>
+</div>
+<button>注销登录</button>
 </body>
 <script src="../js/index.js"></script>
 </html>

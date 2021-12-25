@@ -4,6 +4,8 @@ const serverCors = require('cors')
 
 const body = require('body-parser')
 
+const { connect } = require('./db/db')
+
 const { port , cors } = require('./config/app')
 const empty = require('./middleware/empty')
 
@@ -15,10 +17,17 @@ const filesRouter = require('./router/files')
 
 const app = express()
 
+//连接数据库
+connect()
+
 if(cors) app.use(serverCors())
 
-//处理静态资源
+//处理文件静态资源
 app.use('/public',express.static('./dict/'))
+
+//处理图片资源
+app.use('/upload',express.static('./upload/'))
+
 
 //处理POST请求的请求体数据
 app.use(body.json())
